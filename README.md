@@ -17,13 +17,16 @@ Using the Student.h and Student.cpp Implement the ```Student``` class
 
 ```c++
 class Student {
-  // private section
-  //    int studentId
-  //    name <- 20 charcters
-  
-  // public section
-  //    assignDetails() method declaration
-  //    display() method declaration
+private:  // private section
+int studentId;  //    int studentId
+string studentName;  //    name <- 20 charcters
+
+public:  // public section
+Student();
+Student(int ID, string name);
+void assignDetails();  //    assignDetails() method declaration
+void display();  //    display() method declaration
+
 }
 
 ```
@@ -34,13 +37,15 @@ class Student {
 #include <iostream>
 
 // Assign studentId and name
-Student::assignDetails() {
-  
+Student::assignDetails(int ID, string name) 
+{
+  studentId=ID, studentName=name;
 }
 
 // Display StudentId and Name
-Student::display() {
-  
+Student::display() 
+{
+   cout << "Student ID = " << StudentId << endl << "Student Name = " << studentName << endl; 
 }
 ```
 ### In Excercise01.cpp
@@ -60,8 +65,12 @@ class Box {
        int width;
        int height;
     public:
-       // write prototypes of setters for length, width and height
-       // write prototypes of getters for length, width and height 
+void setLenght(int l);      // write prototypes of setters for length, width and height
+void setWidth(int w ); 
+void setHeight(int h);
+int getLength();       // write prototypes of getters for length, width and height 
+int getWidth();
+int getHeight();
     int calcVolume();
 };
 ```
@@ -83,4 +92,3 @@ int Box::calcVolume() {
 1.	Create a ```Box``` type object called box1
 2.	Assign the keyboard input of ```length```, ```width``` and ```height``` to the box1 object using setters
 3.	Do not change any other coding in the Exercise02.cpp
-
